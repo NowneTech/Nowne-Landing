@@ -1,120 +1,218 @@
+import react from 'react'
+import { useState } from 'react'
+
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import Header from '../../components/Header'
+import Logo from '../../assets/logo-brancov2.png'
+import AboutImage from '../../assets/12.png'
+import serviceImg from '../../assets/2.png'
+import serviceImg4 from '../../assets/6.png'
+import serviceImg3 from '../../assets/4.png'
+import { Animated } from 'react-animated-css'
 
-const inter = Inter({ subsets: ['latin'] })
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faComputerMouse,
+  faChevronDown,
 
-const home = () => {
+
+} from '@fortawesome/free-solid-svg-icons'
+
+const Home = () => {
+  const [showAbout, setShowAbout] = useState<any>(false)
+  const [showServices, setShowServices] = useState<any>(false)
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      if (scrollTop > 350 && scrollTop < 700) {
+        setShowAbout(true)
+      }
+
+      if (scrollTop > 900 && scrollTop < 1800) {
+        setShowServices(true)
+      }
+      console.log('Posição vertical atual:', scrollTop)
+    })
+  }
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <header className="w-full pl-7 pr-7 pt-3 pb-6">
+        <div className="logo-container w-full">
+          <Image src={Logo} width={210} alt="Logo - Nowne" />
         </div>
-      </div>
+        <section className="sectionContainer w-full h-screen content-center">
+          <div className="flex justify-between">
+            <Animated
+              animationIn="fadeInLeft"
+              animationOut="fadeOut"
+              isVisible={true}
+              animationInDelay={1000}
+              animationInDuration={2000}
+            >
+              <div className="sm:w-full lg:w-4/5 popup-left">
+                <p className="text-4xl sm:text-4xl sm:text-4xl md:text-5xl lg:text-6xl about-lineHeight font-semibold">
+                  Transformar{' '}
+                  <span style={{ color: '#f97316' }} className="typing">
+                    negócios
+                  </span>
+                  , utilizando{' '}
+                  <span style={{ color: '#0ea5e9' }} className="typing">
+                    tecnologia
+                  </span>{' '}
+                  e
+                  <span style={{ color: '#3e947c' }} className="typing">
+                    {' '}
+                    inovação
+                  </span>{' '}
+                  como aliados.
+                </p>
+              </div>
+            </Animated>
+          </div>
+        </section>
+        <div className="flex w-full align-center flex-col text-center p-3">
+          <div className="box">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* Sobre */}
+      <section className="aboutContainer drop-shadow flex flex-col items-center">
+        <Animated
+          animationIn="fadeInLeft"
+          animationOut="fadeOut"
+          isVisible={showAbout}
+          animationInDelay={200}
+          animationInDuration={1000}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <Image src={AboutImage} width={300} alt="Logo - Nowne" />
+        </Animated>
+        <div
+          className="
+              sm:w-full lg:w-3/5 text-2xl sm:text-2xl sm:text-2xl mt-4
+              md:text-3xl lg:text-2xl font-thin text-center tracking-wider
+              leading-4 overflow-hidden
+            "
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <Animated
+            animationIn="fadeInRight"
+            animationOut="fadeOut"
+            isVisible={showAbout}
+            animationInDelay={200}
+            animationInDuration={1000}
+          >
+            <p>
+              Acreditamos na transformação do agora, que combina tecnologia com
+              negócios, que otimiza processos e alavanca estratégias para
+              alcançar resultados por meio de produtos digitais.
+            </p>
+          </Animated>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+      {/* serviços */}
+      <section className="servicesContainer pt-7 pb-7 overflow-hidden">
+        <h3 className="text-2xl sm:text-3xl mt-4 md:text-3xl lg:text-3xl font-semibold leading-1 pl-6 mt-3 mb-7">
+          Serviços que oferecemos
+        </h3>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className="serviceContainerCard mt-4 mb-5 w-full flex justify-evenly align-center flex-wrap">
+          <Animated
+            animationIn="fadeInDown"
+            animationOut="fadeOut"
+            isVisible={showServices}
+            animationInDelay={200}
+            animationInDuration={1000}
+          >
+            <div className="card flex flex-col justify-between">
+              <div>
+                <h3
+                  className="font-semibold text-2xl sm:text-2xl
+                md:text-2xl lg:text-2xl"
+                >
+                  Nowne Labs
+                </h3>
+
+                <p className="mt-5 mb-5">
+                  Consultoria em desenvolvimento de ideias, mapeando oportunidades
+                  de mercado, público alvo, plano de negócios e ideação da
+                  proposta de valor.
+                </p>
+              </div>
+
+              <Image src={serviceImg} width={180} alt="imagem" className="m-auto"/>
+            </div>
+          </Animated>
+
+          <Animated
+            animationIn="fadeInUp"
+            animationOut="fadeOut"
+            isVisible={showServices}
+            animationInDelay={200}
+            animationInDuration={1000}
+          >
+            <div className="card flex flex-col justify-between">
+              <div>
+                <h3
+                  className="font-semibold text-2xl sm:text-2xl
+                md:text-2xl lg:text-2xl"
+                >
+                  Nowne Discovery
+                </h3>
+                <p className="mt-5 mb-5">
+                  Consultoria onde mapeamos o produto mínimo viável a ser
+                  desenvolvido para que seja possível validar a entrega de valor
+                  ao negócio com menor custo e tempo possível.
+                </p>
+              </div>
+              <Image src={serviceImg3} width={180} alt="imagem" className="m-auto"/>
+            </div>
+          </Animated>
+
+          <Animated
+            animationIn="fadeInDown"
+            animationOut="fadeOut"
+            isVisible={showServices}
+            animationInDelay={200}
+            animationInDuration={1000}
+          >
+            <div className="card flex flex-col justify-between">
+              <div>
+                <h3
+                  className="font-semibold text-2xl sm:text-2xl
+                md:text-2xl lg:text-2xl"
+                >
+                  Nowne Launch
+                </h3>
+                <p className="mt-5 mb-5">
+                  Serviço de desenvolvimento com time multidiciplinar, visando
+                  entrega do escopo solicitado pelo cliente.
+                </p>
+              </div>
+
+              <Image
+              src={serviceImg4}
+              width={180}
+              alt="imagem"
+              className="m-auto"
+            />
+            </div>
+          </Animated>
+        </div>
+      </section>
+      <section className="pt-7 pb-7">
+        <h3 className="text-2xl sm:text-3xl mt-4 md:text-3xl lg:text-3xl font-semibold leading-1 pl-6 mt-3 mb-7">
+          Tecnologias utilizadas pelo nosso time
+        </h3>
+      </section>
     </main>
   )
 }
 
-export default home
+export default Home

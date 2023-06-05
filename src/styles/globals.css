@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --orange:#ca6a4c;
+  --blue:#2a83b1;
+  --green:#215e56;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +22,126 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #171717;
+  font-family: 'opens-sans', 'arial';
+}
+/* header */
+
+.sectionContainer {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 140px);
+  max-height: 700px;
+}
+
+.about-lineHeight {
+  line-height: 80px;
+  color: #F9F9F9;
+}
+
+/*About*/
+
+.aboutContainer {
+  background-color: var(--green);
+  margin: 0px 8%;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+/*Services*/
+
+.serviceContainerCard {
+  gap:20px;
+}
+
+.card {
+  min-width: 300px;
+  max-width: 340px;
+  height: 100%;
+  min-height: 500px;
+  padding: 20px;
+  border: 2px solid rgba(42,131,177,0.7);
+  border-radius: 8px;
+  box-shadow: 0px 1px 15px 0px rgba(42,131,177,0.69);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(42,131,177,0.69);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(42,131,177,0.69);
+  transition: 1s;
+}
+
+.card:hover {
+  background-color: var(--blue);
+}
+
+/* Animations */
+
+.typing {
+  animation: typingAnimation 6s infinite ease-in-out;
+}
+
+@keyframes typingAnimation {
+ 25% {
+  color: var(--orange);
+ }
+ 50% {
+  color: var(--blue);
+ }
+ 75% {
+  color: var(--green);
+ }
+ 90% {
+  filter: brightness(0.8);
+ }
+ 95% {
+  filter: brightness(0.9);
+ }
+ 100% {
+  filter: brightness(1);
+ }
+}
+
+.box{
+	margin: 20px auto;
+
+}
+
+.box span{
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	transform: rotate(45deg);
+	margin: -10px;
+	animation: animate 2s infinite;
+}
+
+.box span:nth-child(2)
+{
+	animation-delay: -0.2s;
+}
+
+.box span:nth-child(3)
+{
+	animation-delay: -0.4s;
+}
+
+@keyframes animate{
+
+	0%{
+		opacity: 0;
+		transform: rotate(45deg) translate(-20px, -20px);
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		transform: rotate(45deg) translate(20px, 20px);
+	}
+}
+
+@media (max-width: 600px) {
+  .about-lineHeight {
+    line-height: 40px;
+  }
 }
