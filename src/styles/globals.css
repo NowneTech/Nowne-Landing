@@ -25,6 +25,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #181818;
   font-family: 'opens-sans', 'arial';
+  scroll-behavior: smooth;
 }
 /* header */
 
@@ -87,12 +88,9 @@ body {
   padding: 20px;
   border-radius: 8px;
   margin: 20px;
-  border: 1.5px solid #29292e;
+  border: 1.5px solid rgba(42,131,177,0.33);
   background-color: var(--card-background);
   transition: 0.5s;
-  box-shadow: 0px 1px 3px 0px rgba(42,131,177,0.69);
-  -webkit-box-shadow: 0px 1px 3px 0px rgba(42,131,177,0.69);
-  -moz-box-shadow: 0px 1px 3px 0px rgba(42,131,177,0.69);
 }
 
 .card:hover {
@@ -104,9 +102,7 @@ body {
 
 /* tecnologic section */
 
-/* .tecnologicSection {
-  background-color: var(--card-background);
-} */
+
 
 
 /* contact section*/
@@ -130,6 +126,23 @@ body {
   border-radius: 4px;
   color: #FFF;
   margin: 10px 10px 30px 10px;
+  transition: 0.2s;
+}
+
+.contact-btn:hover {
+  border-radius: 4px;
+  filter: brightness(0.5);
+}
+
+/* Social Media */
+
+.social-media {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.social-media:hover {
+  filter: brightness(0.5);
 }
 
 /* General */
