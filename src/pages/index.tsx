@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Header from '../../components/Header'
 import Logo from '../../assets/logo-brancov2.png'
 import AboutImage from '../../assets/about.png'
 import serviceImg from '../../assets/3.png'
@@ -15,14 +14,12 @@ import EvernoteIcon from '../../assets/evernote.svg'
 import Figma from '../../assets/figma.svg'
 import Github from '../../assets/github.svg'
 import Aws from '../../assets/aws.svg'
+import Next from '../../assets/next.svg'
+import Instagram from '../../assets/instagram.svg'
+import Linkedin from '../../assets/linkedin.svg'
+import ArrowUp from '../../assets/Arrow-up.svg'
 
 import { Animated } from 'react-animated-css'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faComputerMouse,
-  faChevronDown
-} from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
   const [showAbout, setShowAbout] = useState<any>(false)
@@ -34,7 +31,7 @@ const Home = () => {
 
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-      if (scrollTop > 350 && scrollTop < 700) {
+      if (scrollTop > 300 && scrollTop < 700) {
         setShowAbout(true)
       }
 
@@ -68,7 +65,7 @@ const Home = () => {
               animationInDuration={2000}
             >
               <div className="sm:w-full lg:w-4/5 popup-left">
-                <p className="text-4xl sm:text-4xl sm:text-4xl md:text-5xl lg:text-6xl about-lineHeight font-semibold">
+                <p className="text-2xl sm:text-4xl sm:text-4xl md:text-5xl lg:text-6xl about-lineHeight font-semibold">
                   Transformar{' '}
                   <span style={{ color: '#f97316' }} className="typing">
                     negócios
@@ -114,9 +111,9 @@ const Home = () => {
         </Animated>
         <div
           className="
-              sm:w-full lg:w-3/5 text-2xl sm:text-2xl sm:text-2xl mt-4
-              md:text-3xl lg:text-2xl font-thin text-center tracking-wider
-              leading-4 overflow-hidden
+              sm:w-full lg:w-3/5 text-2xl sm:text-1xl mt-4 text-base
+              md:text-2xl lg:text-2xl font-thin text-center tracking-wider
+              overflow-hidden
             "
         >
           <Animated
@@ -140,10 +137,10 @@ const Home = () => {
 
       {/* serviços */}
       <section className="servicesContainer pt-7 pb-10 overflow-hidden">
-        <h3 className="text-2xl sm:text-3xl mt-4 md:text-3xl lg:text-3xl font-bold leading-1 pl-6 pr-6 mt-3 mb-7 text-center">
+        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-bold leading-1 pl-6 pr-6 mt-3 mb-7 text-center">
           <span style={{ color: '#0ea5e9' }}>Serviços </span>que
-          disponibilizamos para te entregar o{' '}
-          <span style={{ color: '#0ea5e9' }}>melhor</span> produto possível.
+          fornecemos para criar o{' '}
+          <span style={{ color: '#0ea5e9' }}>melhor</span> produto pra você:
         </h3>
 
         <div className="serviceContainerCard mt-4 mb-5 w-full flex justify-center align-center flex-wrap">
@@ -240,11 +237,14 @@ const Home = () => {
         </div>
       </section>
       <section className="tecnologicSection pt-12 pb-10 pl-7 pr-7">
-        <h3 className="text-3xl sm:text-3xl mt-4 md:text-4xl lg:text-4xl font-semibold leading-1 mt-3 mb-7">
+
+      </section>
+      <section className="tecnologicSection pt-12 pb-10 pl-7 pr-7">
+        <h3 className="text-xl text-center sm:text-left md:text-left lg:text-left sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-semibold leading-1 mt-3 mb-7">
           <span style={{ color: '#f97316' }}>Tecnologias</span> utilizadas pelo
           nosso <span style={{ color: '#f97316' }}>time</span>
         </h3>
-        <div className="w-full flex flex-wrap lg:justify-start sm:justify-center ">
+        <div className="w-full flex flex-wrap justify-center lg:justify-start">
           <div className="card-small">
             <div className="card-hr mr-4">
               <Image
@@ -255,6 +255,17 @@ const Home = () => {
               />
             </div>
             <p className="text-general">REACT</p>
+          </div>
+          <div className="card-small">
+            <div className="card-hr mr-4">
+              <Image
+                src={Next}
+                width={50}
+                alt="imagem"
+                className="svg-primary mr-2"
+              />
+            </div>
+            <p className="text-general">NEXT</p>
           </div>
           <div className="card-small">
             <div className="card-hr mr-4">
@@ -317,12 +328,42 @@ const Home = () => {
 
       <div className="line-primary-rotate line-centered" />
 
-
       <section className="contactContainer">
-        <h3 className="text-3xl sm:text-3xl mt-4 md:text-4xl lg:text-4xl font-semibold leading-1 mt-3 mb-7 text-center">
+        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl mt-4 font-semibold leading-1 mt-3 mb-7 text-center">
           Como podemos ajudar na construção do seu produto?
         </h3>
-        <button className="contact-btn"><span>Entre em contato conosco</span></button>
+        <button
+          className="contact-btn"
+          onClick={() => { window.open("https://wa.me/5553991869805")}}
+        >
+          <span>Entre em contato conosco</span>
+        </button>
+        <div className="flex justify-between w-full mb-1">
+          <div className="flex">
+            <Image
+              src={Instagram}
+              width={40}
+              alt="Instagram - logo"
+              className="svg-primary mr-2 social-media"
+              onClick={() => { window.open("https://www.instagram.com/nowneteam/")}}
+            />
+            <Image
+              src={Linkedin}
+              width={40}
+              alt="Linkedin - logo"
+              className="svg-primary mr-2 social-media"
+              onClick={() => { window.open("https://www.linkedin.com/company/nowne/")}}
+            />
+          </div>
+          <Image
+            src={ArrowUp}
+            width={40}
+            alt="Seta pra cima"
+            className="svg-primary mr-2 social-media"
+            title="Voltar para o inicio"
+            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' })}}
+          />
+        </div>
         <p className="text-center">℗ 2023 Nowne - Todos os direitos reservados</p>
       </section>
     </main>
