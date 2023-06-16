@@ -236,9 +236,7 @@ const Home = () => {
           </Animated>
         </div>
       </section>
-      <section className="tecnologicSection pt-12 pb-10 pl-7 pr-7">
 
-      </section>
       <section className="tecnologicSection pt-12 pb-10 pl-7 pr-7">
         <h3 className="text-xl text-center sm:text-left md:text-left lg:text-left sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-semibold leading-1 mt-3 mb-7">
           <span style={{ color: '#f97316' }}>Tecnologias</span> utilizadas pelo
