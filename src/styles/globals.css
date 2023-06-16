@@ -11,6 +11,7 @@
   --blue:#2a83b1;
   --green:#215e56;
   --card-background:#1f1f1f;
+  --paragraph-color:#F9F9F9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -166,6 +167,10 @@ body {
 
 .text-general {
   color: #a8a8b3;
+}
+
+.paragraph-color {
+  color:var(--paragraph-color)
 }
 
 .card-small {

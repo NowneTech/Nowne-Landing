@@ -127,7 +127,7 @@ const Home = () => {
             animationInDelay={200}
             animationInDuration={1000}
           >
-            <p className="text-general">
+            <p className="paragraph-color">
               Acreditamos na transformação do agora, que combina tecnologia com
               negócios, que otimiza processos e alavanca estratégias para
               alcançar resultados por meio de produtos digitais.
@@ -141,7 +141,7 @@ const Home = () => {
 
       {/* serviços */}
       <section className="servicesContainer pt-7 pb-10 overflow-hidden">
-        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-bold leading-1 pl-6 pr-6 mt-3 mb-7 text-center">
+        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-bold leading-1 pl-6 pr-6 mt-3 mb-7 text-center paragraph-color ">
           <span style={{ color: '#0ea5e9' }}>Serviços </span>que fornecemos para
           criar o <span style={{ color: '#0ea5e9' }}>melhor</span> produto pra
           você:
@@ -166,12 +166,12 @@ const Home = () => {
               <div>
                 <h3
                   className="font-semibold text-2xl sm:text-2xl
-                md:text-2xl lg:text-2xl"
+                md:text-2xl lg:text-2xl paragraph-color "
                 >
                   Nowne Labs
                 </h3>
 
-                <p className="mt-5 mb-5">
+                <p className="mt-5 mb-5 paragraph-color">
                   Consultoria em desenvolvimento de ideias, mapeando
                   oportunidades de mercado, público alvo, plano de negócios e
                   ideação da proposta de valor.
@@ -199,11 +199,11 @@ const Home = () => {
               <div>
                 <h3
                   className="font-semibold text-2xl sm:text-2xl
-                md:text-2xl lg:text-2xl"
+                md:text-2xl lg:text-2xl paragraph-color "
                 >
                   Nowne Discovery
                 </h3>
-                <p className="mt-5 mb-5 text-general">
+                <p className="mt-5 mb-5 paragraph-color ">
                   Consultoria onde mapeamos o produto mínimo viável a ser
                   desenvolvido para que seja possível validar a entrega de valor
                   ao negócio com menor custo e tempo possível.
@@ -230,11 +230,11 @@ const Home = () => {
               <div>
                 <h3
                   className="font-semibold text-2xl sm:text-2xl
-                md:text-2xl lg:text-2xl"
+                md:text-2xl lg:text-2xl paragraph-color "
                 >
                   Nowne Launch
                 </h3>
-                <p className="mt-5 mb-5 text-general">
+                <p className="mt-5 mb-5 paragraph-color ">
                   Serviço de desenvolvimento com time multidiciplinar, visando
                   entrega do escopo solicitado pelo cliente.
                 </p>
@@ -245,7 +245,7 @@ const Home = () => {
       </section>
 
       <section className="tecnologicSection pt-12 pb-10 pl-7 pr-7">
-        <h3 className="text-xl text-center sm:text-left md:text-left lg:text-left sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-semibold leading-1 mt-3 mb-7">
+        <h3 className="text-xl text-center sm:text-left md:text-left lg:text-left sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-semibold leading-1 mt-3 mb-7 paragraph-color ">
           <span style={{ color: '#f97316' }}>Tecnologias</span> utilizadas pelo
           nosso <span style={{ color: '#f97316' }}>time</span>
         </h3>
@@ -334,7 +334,7 @@ const Home = () => {
       <div className="line-primary-rotate line-centered" />
 
       <section className="contactContainer">
-        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl mt-4 font-semibold leading-1 mt-3 mb-7 text-center">
+        <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl mt-4 font-semibold leading-1 mt-3 mb-7 text-center paragraph-color ">
           Como podemos ajudar na construção do seu produto?
         </h3>
         <button
@@ -377,7 +377,7 @@ const Home = () => {
             }}
           />
         </div>
-        <p className="text-center">
+        <p className="text-center paragraph-color ">
           ℗ 2023 Nowne - Todos os direitos reservados
         </p>
       </section>
