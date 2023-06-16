@@ -27,7 +27,8 @@ const Home = () => {
 
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', function () {
-      let logoContainer = document.querySelector('.logo-container')
+      //@ts-ignore
+      let logoContainer = document.querySelector('.logo-container') || false
 
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
@@ -40,12 +41,12 @@ const Home = () => {
       }
 
       if (scrollTop > 10) {
+        //@ts-ignore
         logoContainer.classList.add('logo-container-fixed')
       } else {
+        //@ts-ignore
         logoContainer.classList.remove('logo-container-fixed')
       }
-
-      console.log('Posição vertical atual:', scrollTop)
     })
   }
 
@@ -57,6 +58,7 @@ const Home = () => {
         </div>
         <section className="sectionContainer w-full h-screen content-center pl-7 pr-7 ">
           <div className="flex justify-between">
+            {/*@ts-ignore*/}
             <Animated
               animationIn="fadeInLeft"
               animationOut="fadeOut"
@@ -96,6 +98,7 @@ const Home = () => {
 
       {/* Sobre */}
       <section className="aboutContainer drop-shadow flex flex-col items-center">
+        {/*@ts-ignore*/}
         <Animated
           animationIn="fadeInLeft"
           animationOut="fadeOut"
@@ -116,6 +119,7 @@ const Home = () => {
               overflow-hidden
             "
         >
+          {/*@ts-ignore*/}
           <Animated
             animationIn="fadeInRight"
             animationOut="fadeOut"
@@ -138,12 +142,13 @@ const Home = () => {
       {/* serviços */}
       <section className="servicesContainer pt-7 pb-10 overflow-hidden">
         <h3 className="text-xl sm:text-1xl mt-4 md:text-2xl lg:text-3xl font-bold leading-1 pl-6 pr-6 mt-3 mb-7 text-center">
-          <span style={{ color: '#0ea5e9' }}>Serviços </span>que
-          fornecemos para criar o{' '}
-          <span style={{ color: '#0ea5e9' }}>melhor</span> produto pra você:
+          <span style={{ color: '#0ea5e9' }}>Serviços </span>que fornecemos para
+          criar o <span style={{ color: '#0ea5e9' }}>melhor</span> produto pra
+          você:
         </h3>
 
         <div className="serviceContainerCard mt-4 mb-5 w-full flex justify-center align-center flex-wrap">
+          {/*@ts-ignore*/}
           <Animated
             animationIn="fadeInDown"
             animationOut="fadeOut"
@@ -175,6 +180,7 @@ const Home = () => {
             </div>
           </Animated>
 
+          {/*@ts-ignore*/}
           <Animated
             animationIn="fadeInUp"
             animationOut="fadeOut"
@@ -206,6 +212,7 @@ const Home = () => {
             </div>
           </Animated>
 
+          {/*@ts-ignore*/}
           <Animated
             animationIn="fadeInDown"
             animationOut="fadeOut"
@@ -332,7 +339,9 @@ const Home = () => {
         </h3>
         <button
           className="contact-btn"
-          onClick={() => { window.open("https://wa.me/5553991869805")}}
+          onClick={() => {
+            window.open('https://wa.me/5553991869805')
+          }}
         >
           <span>Entre em contato conosco</span>
         </button>
@@ -343,14 +352,18 @@ const Home = () => {
               width={40}
               alt="Instagram - logo"
               className="svg-primary mr-2 social-media"
-              onClick={() => { window.open("https://www.instagram.com/nowneteam/")}}
+              onClick={() => {
+                window.open('https://www.instagram.com/nowneteam/')
+              }}
             />
             <Image
               src={Linkedin}
               width={40}
               alt="Linkedin - logo"
               className="svg-primary mr-2 social-media"
-              onClick={() => { window.open("https://www.linkedin.com/company/nowne/")}}
+              onClick={() => {
+                window.open('https://www.linkedin.com/company/nowne/')
+              }}
             />
           </div>
           <Image
@@ -359,10 +372,14 @@ const Home = () => {
             alt="Seta pra cima"
             className="svg-primary mr-2 social-media"
             title="Voltar para o inicio"
-            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' })}}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
           />
         </div>
-        <p className="text-center">℗ 2023 Nowne - Todos os direitos reservados</p>
+        <p className="text-center">
+          ℗ 2023 Nowne - Todos os direitos reservados
+        </p>
       </section>
     </main>
   )
